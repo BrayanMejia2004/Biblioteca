@@ -74,6 +74,7 @@ public class AdministradoVista {
 		return "Administrador/Categoria";
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/registroCategoria")
 	public String registroCategoria(@ModelAttribute("categoria") Categoria categoria) {
 		categoriaRepository.save(categoria);	

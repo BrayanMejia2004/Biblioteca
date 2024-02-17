@@ -64,10 +64,12 @@ public class PrestamoVista {
 			@RequestParam("fechaprestamo") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaPrestamo,
 			@RequestParam("fechadevolucion") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaDevolucion) {
 
+		@SuppressWarnings("null")
 		Libro libro = libroRepository.findById(libroId).orElse(null);
 		libro.setPrestado(true);
 		libroRepository.save(libro);
 
+		@SuppressWarnings("null")
 		Estudiante estudiante = estudianteRepository.findById(estudianteId).orElse(null);
 
 		if (libro != null && estudiante != null) {
@@ -105,15 +107,18 @@ public class PrestamoVista {
 		return "Prestamo/VerPrestamo";
 	}
 
+	@SuppressWarnings("null")
 	private String obtenerNombreLibro(Prestamo prestamo) {
 		return libroRepository.findById(prestamo.getLibro().getId()).map(Libro::getTitulo).orElse("Desconocido");
 	}
 
+	@SuppressWarnings("null")
 	private String obtenerNombreEstudiante(Prestamo prestamo) {
 		return estudianteRepository.findById(prestamo.getEstudiante().getId())
 				.map(e -> e.getNombre() + " " + e.getApellido()).orElse("Desconocido");
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/EliminarPrestamo/{id}")
 	public String EliminarPrestamo(@PathVariable("id") String id) {
 		Prestamo prestamo = prestamoRepository.findById(id).orElse(null);

@@ -32,6 +32,7 @@ public class EstudianteVista {
 		return "Estudiante/RegistroEstudiante";
 	}
 	
+	@SuppressWarnings("null")
 	@PostMapping("/registroEstudiante")
 	public String registroEstudiante(@ModelAttribute("estudiante") Estudiante estudiante) {		
 		estudianteRepository.save(estudiante);

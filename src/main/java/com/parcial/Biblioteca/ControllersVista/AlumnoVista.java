@@ -40,6 +40,7 @@ public class AlumnoVista {
 	
 	@GetMapping("/imagen/{id}")
 	public ResponseEntity<byte[]> imagen(@PathVariable String id){
+		@SuppressWarnings("null")
 		Optional<Libro> libroOptional = libroRepository.findById(id);
 		
 		if (libroOptional.isPresent()) {

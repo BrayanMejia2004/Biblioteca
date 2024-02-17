@@ -52,6 +52,7 @@ public class LoginVista {
 		return "/Login";
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("credenciales")
 	public String credenciales(@ModelAttribute("registrarse") Login login) {
 		loginRepository.save(login);

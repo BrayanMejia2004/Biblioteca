@@ -26,11 +26,13 @@ public class LibroWeb {
 		return libroRepository.findAll();
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public Libro findById(@PathVariable String id) {
 		return libroRepository.findById(id).orElse(null);
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/")
 	public Libro save(@RequestBody Map<String, Object> body) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -44,6 +46,7 @@ public class LibroWeb {
 		return libroRepository.save(libro);
 	}
 
+	@SuppressWarnings("null")
 	@DeleteMapping("/{id}")
 	public Libro delete(@PathVariable String id) {
 		Libro libro = libroRepository.findById(id).orElse(null);

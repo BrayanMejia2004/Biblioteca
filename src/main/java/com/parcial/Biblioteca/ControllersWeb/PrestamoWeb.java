@@ -28,11 +28,13 @@ public class PrestamoWeb {
 		return prestamoRepository.findAll();
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public Optional<Prestamo> findById(@PathVariable String id) {
 		return prestamoRepository.findById(id);
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/")
 	public Prestamo save(@RequestBody Map<String, Object> body) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -46,6 +48,7 @@ public class PrestamoWeb {
 		return prestamoRepository.save(prestamo);
 	}
 
+	@SuppressWarnings("null")
 	@DeleteMapping("/{id}")
 	public Prestamo delete(@PathVariable String id) {
 		Prestamo prestamo = prestamoRepository.findById(id).orElse(null);

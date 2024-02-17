@@ -26,11 +26,13 @@ public class EstudianteWeb {
 		return estudianteRepository.findAll();
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public Estudiante findById(@PathVariable String id) {
 		return estudianteRepository.findById(id).orElse(null);
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/")
 	public Estudiante save(@RequestBody Map<String, Object> body) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -44,6 +46,7 @@ public class EstudianteWeb {
 		return estudianteRepository.save(estudiante);
 	}
 
+	@SuppressWarnings("null")
 	@DeleteMapping("/{id}")
 	public Estudiante delete(@PathVariable String id) {
 		Estudiante estudiante = estudianteRepository.findById(id).orElse(null);

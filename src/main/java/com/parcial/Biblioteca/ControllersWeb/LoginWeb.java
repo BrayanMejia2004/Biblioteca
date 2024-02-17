@@ -27,11 +27,13 @@ public class LoginWeb {
 		return loginRepository.findAll();
 	}
 	
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public Login findById(@PathVariable String id) {
 		return loginRepository.findById(id).orElse(null);
 	}
 	
+	@SuppressWarnings("null")
 	@PostMapping("/")
 	public Login save(@RequestBody Map<String, Object> body) {
 		ObjectMapper mapper = new ObjectMapper();

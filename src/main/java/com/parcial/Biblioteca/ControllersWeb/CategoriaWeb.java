@@ -26,11 +26,13 @@ public class CategoriaWeb {
 		return (List<Categoria>) categoriaRepository.findAll();
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public Categoria findById(@PathVariable String id) {
 		return categoriaRepository.findById(id).orElse(null);
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/")
 	public Categoria save(@RequestBody Map<String, Object> body) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -44,6 +46,7 @@ public class CategoriaWeb {
 		return categoriaRepository.save(categoria);
 	}
 
+	@SuppressWarnings("null")
 	@DeleteMapping("/{id}")
 	public Categoria delete(@PathVariable String id) {
 		Categoria autor = categoriaRepository.findById(id).orElse(null);

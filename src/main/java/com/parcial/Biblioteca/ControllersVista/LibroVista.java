@@ -44,6 +44,7 @@ public class LibroVista {
 	
 	@GetMapping("/imagen/{id}")
 	public ResponseEntity<byte[]> imagen(@PathVariable String id){
+		@SuppressWarnings("null")
 		Optional<Libro> libroOptional = libroRepository.findById(id);
 		
 		if (libroOptional.isPresent()) {
@@ -72,6 +73,7 @@ public class LibroVista {
 		return "Libro/RegistrarLibro";
 	}
 
+	@SuppressWarnings("null")
 	@PostMapping("/RegistroLibro")
 	public String RegistroLibro(@ModelAttribute("libros") Libro libro, 
 			@RequestParam("file") MultipartFile file) {
@@ -114,6 +116,7 @@ public class LibroVista {
 
 	@PostMapping("/ActualizarLibro/{id}")
 	public String actualizarLibro(@PathVariable("id") String id, @ModelAttribute("libro") Libro libro) {
+		@SuppressWarnings("null")
 		Libro libroEncontrado = libroRepository.findById(id).orElse(null);
 
 		if (libroEncontrado != null) {
@@ -126,6 +129,7 @@ public class LibroVista {
 		return "redirect:/libro/VistaListaLibros";
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/EliminarLibro/{id}")
 	public String EliminarLibro(@PathVariable("id") String id) {
 		libroRepository.deleteById(id);
