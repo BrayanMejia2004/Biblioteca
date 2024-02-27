@@ -9,4 +9,4 @@ Proyecto en Spring Boot (JAVA) con mongoDB, este proyecto consiste en la creaci√
 * Listar, Registrar y Eliminar un Prestamo
 * Observar un calendario con los prestamos activos
   
-BY Brayan Mejia - Tecnologo en desarrollo de sistemas informaticos
+Desarrollado por Brayan Mejia - Tecn√≥logo en desarrollo de sistemas informaticos.
